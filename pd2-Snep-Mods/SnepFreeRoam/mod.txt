@@ -1,0 +1,11 @@
+{
+	"name": "Snep Free Roam",
+	"description": "Adds two pause-menu buttons that silently remove all guards (+ disable cameras) / all non-essential civilians (host or offline only). Items they carried (keycards etc.) are spawned at your feet and reported in chat.",
+	"author": "Snep",
+	"version": "1.0",
+	"blt_version": 2,
+	"color": "0.3 0.9 0.5",
+	"hooks": [
+		{ "hook_id": "lib/managers/menumanager", "script_path": "lua/main.lua" }
+	]
+}

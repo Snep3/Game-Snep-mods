@@ -1,0 +1,72 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>SnepMods</AssemblyName>
+    <Description>Valheim mod pack with multiple gameplay tweaks (AutoShield, Compass, AreaRepair).</Description>
+    <Version>1.2.2</Version>
+    <LangVersion>latest</LangVersion>
+    <RestorePackages>false</RestorePackages>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
+    <!--
+      Path to your local Valheim install (used only at build time, for referencing the
+      game's own assemblies so the compiler knows about classes like Player/Humanoid).
+      Set your own paths in a Directory.Build.props next to this file (git-ignored), or
+      override with: dotnet build -p:VALHEIM_PATH="D:\Path\To\Valheim"
+    -->
+    <VALHEIM_PATH Condition="'$(VALHEIM_PATH)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Valheim</VALHEIM_PATH>
+    <VALHEIM_MANAGED>$(VALHEIM_PATH)\valheim_Data\Managed</VALHEIM_MANAGED>
+
+    <!--
+      Path to a BepInEx installation whose core/ folder has 0Harmony.dll + BepInEx.dll.
+      Any modded Thunderstore/r2modman profile works. Override with:
+      dotnet build -p:BEPINEX_CORE_PATH="C:\...\profiles\YourProfile\BepInEx\core"
+    -->
+    <BEPINEX_CORE_PATH Condition="'$(BEPINEX_CORE_PATH)' == ''">$(VALHEIM_PATH)\BepInEx\core</BEPINEX_CORE_PATH>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="assembly_valheim">
+      <HintPath>$(VALHEIM_MANAGED)\assembly_valheim.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="assembly_utils">
+      <HintPath>$(VALHEIM_MANAGED)\assembly_utils.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(VALHEIM_MANAGED)\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(VALHEIM_MANAGED)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(VALHEIM_MANAGED)\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(VALHEIM_MANAGED)\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(VALHEIM_MANAGED)\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>$(VALHEIM_MANAGED)\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>$(BEPINEX_CORE_PATH)\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(BEPINEX_CORE_PATH)\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

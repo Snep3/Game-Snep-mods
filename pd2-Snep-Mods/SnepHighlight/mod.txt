@@ -1,0 +1,24 @@
+{
+	"name": "Snep Highlight",
+	"description": "One key toggles highlights on Gage packages (green) and mission items like keycards, tools and chemicals (magenta). Set the key in Options > Mod Options > Snep Highlight.",
+	"author": "Snep",
+	"version": "1.0",
+	"blt_version": 2,
+	"color": "1 0 1",
+	"hooks": [
+		{ "hook_id": "lib/managers/menumanager", "script_path": "lua/main.lua" },
+		{ "hook_id": "lib/units/interactions/interactionext", "script_path": "lua/main.lua" }
+	],
+	"keybinds": [
+		{
+			"keybind_id": "snep_highlight_toggle",
+			"name": "Highlight toggle",
+			"description": "Toggle highlights on Gage packages and mission items.",
+			"script_path": "lua/toggle.lua",
+			"run_in_menu": false,
+			"run_in_game": true,
+			"show_in_menu": false,
+			"localized": false
+		}
+	]
+}

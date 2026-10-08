@@ -1,0 +1,23 @@
+# Build output
+bin/
+obj/
+
+# Release zips (upload these as GitHub Releases instead of committing them)
+*.zip
+
+# Built DLL copied into the Thunderstore package folder
+**/package/BepInEx/plugins/*.dll
+
+# Local machine paths (game / BepInEx install locations)
+Directory.Build.props
+
+# IDE / editor files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# OS clutter
+Thumbs.db
+desktop.ini

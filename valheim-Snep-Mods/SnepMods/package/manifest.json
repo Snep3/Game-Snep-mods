@@ -1,0 +1,9 @@
+{
+    "name": "SnepMods",
+    "version_number": "1.2.2",
+    "website_url": "",
+    "description": "A small pack of gameplay tweaks: AutoShield, a customizable Compass, AreaRepair (repairs nearby pieces with your hammer), and FloatingItems (dropped items float instead of sinking). Shift+P opens the settings menu.",
+    "dependencies": [
+        "denikson-BepInExPack_Valheim-5.4.2351"
+    ]
+}
